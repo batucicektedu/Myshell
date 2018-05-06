@@ -1,0 +1,23 @@
+This shell example works 2 ways, interactive mode and a batch file mode.
+Interactive is just like a shell, it will execute commands and it will do them sequentially if '|' is between them or concurrently if ';' is between. If quit is written in a chunk with these characters all commands will be done before quiting.
+The batch mode takes a file and reads it until it sees "quit". It also executes commands the same with interactive.
+
+Its structure is like this:
+
+Main determines the mode of the program and calls its method.
+
+These methods have loops that are simulating the shell.
+
+Ofcourse there are supporting methods like, split (splitting the code by '|'), exc (checking the ';' characters and executing the code in a threaded fashion according to the ';'s.
+
+I used pthread library for concurrency.
+
+********************
+
+I handle quiting after all commands finish by checking for quits as command tokens and do not execute it but rather return 0 and exit the code after the function is finished.
+
+******************
+
+the last command that is entered is sometimes not executed correctly I assume this is the only problem but despite my efforts of changing the code uncountable times I always kept having errors. This is probably because my lack of knowledge in c language.
+
+*****************
